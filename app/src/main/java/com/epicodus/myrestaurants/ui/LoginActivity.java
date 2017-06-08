@@ -45,7 +45,11 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         ButterKnife.bind(this);
 
         mRegisterTextView.setOnClickListener(this);
+        mPasswordLoginButton.setOnClickListener(this);
         mAuth = FirebaseAuth.getInstance();
+        createAuthProgressDialog();
+
+//        State listener
         mAuthListener = new FirebaseAuth.AuthStateListener(){
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
@@ -59,12 +63,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             }
         };
     }
-    private void createAuthProgressDialog() {
-        mAuthProgressDialog = new ProgressDialog(this);
-        mAuthProgressDialog.setTitle("Loading...");
-        mAuthProgressDialog.setMessage("Setting Up Your Account...");
-        mAuthProgressDialog.setCancelable(false);
-    }
+
     @Override
     public void onClick(View view) {
         if (view == mRegisterTextView) {
@@ -95,13 +94,20 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         Log.d(TAG, "signInWithEmail:onComplete:" + task.isSuccessful());
+                        mAuthProgressDialog.dismiss();
                         if (!task.isSuccessful()) {
-                            Log.w(TAG, "signInWithEmail", task.getException());
                             Toast.makeText(LoginActivity.this, "Authentication failed.",
                                     Toast.LENGTH_SHORT).show();
                         }
                     }
                 });
+    }
+
+    private void createAuthProgressDialog() {
+        mAuthProgressDialog = new ProgressDialog(this);
+        mAuthProgressDialog.setTitle("Loading...");
+        mAuthProgressDialog.setMessage("Setting Up Your Account...");
+        mAuthProgressDialog.setCancelable(false);
     }
     @Override
     public void onStart() {
