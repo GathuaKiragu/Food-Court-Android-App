@@ -59,6 +59,12 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             }
         };
     }
+    private void createAuthProgressDialog() {
+        mAuthProgressDialog = new ProgressDialog(this);
+        mAuthProgressDialog.setTitle("Loading...");
+        mAuthProgressDialog.setMessage("Setting Up Your Account...");
+        mAuthProgressDialog.setCancelable(false);
+    }
     @Override
     public void onClick(View view) {
         if (view == mRegisterTextView) {
@@ -69,6 +75,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             loginWithPassword();
         }
     }
+
 //Method to prohibit users from entering wrong information
     private void loginWithPassword() {
         String email = mEmailEditText.getText().toString().trim();
