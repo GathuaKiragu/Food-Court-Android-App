@@ -17,11 +17,13 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.UserProfileChangeRequest;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
 public class CreateAccountActivity extends AppCompatActivity implements View.OnClickListener {
+    public static final String TAG = CreateAccountActivity.class.getSimpleName();
     @Bind(R.id.createUserButton)
     Button mCreateUserButton;
     @Bind(R.id.nameEditText)
@@ -37,6 +39,7 @@ public class CreateAccountActivity extends AppCompatActivity implements View.OnC
     private FirebaseAuth mAuth;
     private FirebaseAuth.AuthStateListener mAuthListener;
     private ProgressDialog mAuthProgressDialog;
+    private String mName;
 
 
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,7 +57,7 @@ public class CreateAccountActivity extends AppCompatActivity implements View.OnC
     private void createAuthProgressDialog() {
         mAuthProgressDialog = new ProgressDialog(this);
         mAuthProgressDialog.setTitle("Loading...");
-        mAuthProgressDialog.setMessage("Authenticating with Firebase...");
+        mAuthProgressDialog.setMessage("Authenticating your Account...");
         mAuthProgressDialog.setCancelable(false);
     }
 
@@ -76,6 +79,7 @@ public class CreateAccountActivity extends AppCompatActivity implements View.OnC
     }
 
     private void createNewUser() {
+        mName= mNameEditText.getText().toString().trim();
         final String name = mNameEditText.getText().toString().trim();
         final String email = mEmailEditText.getText().toString().trim();
         String password = mPasswordEditText.getText().toString().trim();
@@ -84,7 +88,7 @@ public class CreateAccountActivity extends AppCompatActivity implements View.OnC
 //        Calling veryfication methods
 
         boolean validEmail = isValidEmail(email);
-        boolean validName = isValidName(name);
+        boolean validName = isValidName(mName);
         boolean validPassword = isValidPassword(password, confirmPassword);
         if (!validEmail || !validName || !validPassword) return;
 
@@ -97,6 +101,7 @@ public class CreateAccountActivity extends AppCompatActivity implements View.OnC
                         mAuthProgressDialog.dismiss();
                         if (task.isSuccessful()) {
                             Toast.makeText(CreateAccountActivity.this, "Authentication successful",Toast.LENGTH_SHORT).show();
+                            createFirebaseUserProfile(task.getResult().getUser());
                         } else {
                             Toast.makeText(CreateAccountActivity.this, "Authentication failed.",
                                     Toast.LENGTH_SHORT).show();
@@ -163,5 +168,23 @@ public class CreateAccountActivity extends AppCompatActivity implements View.OnC
         if (mAuthListener != null) {
             mAuth.removeAuthStateListener(mAuthListener);
         }
+    }
+    private void createFirebaseUserProfile(final FirebaseUser user) {
+
+        UserProfileChangeRequest addProfileName = new UserProfileChangeRequest.Builder()
+                .setDisplayName(mName)
+                .build();
+
+        user.updateProfile(addProfileName)
+                .addOnCompleteListener(new OnCompleteListener<Void>() {
+
+                    @Override
+                    public void onComplete(@NonNull Task<Void> task) {
+                        if (task.isSuccessful()) {
+                            Log.d(TAG, user.getDisplayName());
+                        }
+                    }
+
+                });
     }
 }
