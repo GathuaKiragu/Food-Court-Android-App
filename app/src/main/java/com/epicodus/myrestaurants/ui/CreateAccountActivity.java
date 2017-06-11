@@ -41,7 +41,6 @@ public class CreateAccountActivity extends AppCompatActivity implements View.OnC
     private ProgressDialog mAuthProgressDialog;
     private String mName;
 
-
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_account);
@@ -53,14 +52,13 @@ public class CreateAccountActivity extends AppCompatActivity implements View.OnC
         createAuthStateListener();
         createAuthProgressDialog();
     }
-
+//Process Dialog
     private void createAuthProgressDialog() {
         mAuthProgressDialog = new ProgressDialog(this);
         mAuthProgressDialog.setTitle("Loading...");
         mAuthProgressDialog.setMessage("Authenticating your Account...");
         mAuthProgressDialog.setCancelable(false);
     }
-
 //    Onclick listener
     @Override
     public void onClick(View view) {
@@ -85,7 +83,7 @@ public class CreateAccountActivity extends AppCompatActivity implements View.OnC
         String password = mPasswordEditText.getText().toString().trim();
         String confirmPassword = mConfirmPasswordEditText.getText().toString().trim();
 
-//        Calling veryfication methods
+//Calling veryfication methods
 
         boolean validEmail = isValidEmail(email);
         boolean validName = isValidName(mName);
@@ -138,6 +136,7 @@ public class CreateAccountActivity extends AppCompatActivity implements View.OnC
         }
         return true;
     }
+
     // Firebase method to listen for user authentification state
     private void createAuthStateListener() {
         mAuthListener = new FirebaseAuth.AuthStateListener() {
