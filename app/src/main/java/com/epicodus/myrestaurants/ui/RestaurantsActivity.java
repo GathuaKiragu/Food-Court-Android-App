@@ -9,26 +9,24 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.SearchView;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.widget.ArrayAdapter;
-import android.widget.ListView;
-import android.widget.TextView;
+
 import com.epicodus.myrestaurants.Constants;
 import com.epicodus.myrestaurants.R;
 import com.epicodus.myrestaurants.adapters.RestaurantListAdapter;
-import com.epicodus.myrestaurants.models.Restaurant;
 import com.epicodus.myrestaurants.services.YelpService;
+import com.epicodus.myrestaurants.models.Restaurant;
+
 import java.io.IOException;
 import java.util.ArrayList;
+
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import okhttp3.Call;
 import okhttp3.Callback;
 import okhttp3.Response;
-
 
 public class RestaurantsActivity extends AppCompatActivity {
     private SharedPreferences mSharedPreferences;
@@ -48,17 +46,17 @@ public class RestaurantsActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         String location = intent.getStringExtra("location");
+
         getRestaurants(location);
 
         mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
         mRecentAddress = mSharedPreferences.getString(Constants.PREFERENCES_LOCATION_KEY, null);
 
-
         if (mRecentAddress != null) {
             getRestaurants(mRecentAddress);
         }
     }
-//inflating the search menu
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
@@ -79,12 +77,14 @@ public class RestaurantsActivity extends AppCompatActivity {
                 getRestaurants(query);
                 return false;
             }
+
             @Override
             public boolean onQueryTextChange(String newText) {
                 return false;
             }
 
         });
+
         return true;
     }
 
@@ -106,6 +106,7 @@ public class RestaurantsActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call call, Response response) {
                 mRestaurants = yelpService.processResults(response);
+
                 RestaurantsActivity.this.runOnUiThread(new Runnable() {
 
                     @Override
@@ -116,7 +117,6 @@ public class RestaurantsActivity extends AppCompatActivity {
                                 new LinearLayoutManager(RestaurantsActivity.this);
                         mRecyclerView.setLayoutManager(layoutManager);
                         mRecyclerView.setHasFixedSize(true);
-
                     }
                 });
             }
@@ -126,4 +126,5 @@ public class RestaurantsActivity extends AppCompatActivity {
     private void addToSharedPreferences(String location) {
         mEditor.putString(Constants.PREFERENCES_LOCATION_KEY, location).apply();
     }
+
 }
