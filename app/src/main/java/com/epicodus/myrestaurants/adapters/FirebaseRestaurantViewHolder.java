@@ -9,7 +9,6 @@ import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 import com.epicodus.myrestaurants.Constants;
 import com.epicodus.myrestaurants.R;
 import com.epicodus.myrestaurants.models.Restaurant;
@@ -21,9 +20,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.squareup.picasso.Picasso;
-
 import org.parceler.Parcels;
-
 import java.util.ArrayList;
 
 /**
@@ -89,8 +86,8 @@ public class FirebaseRestaurantViewHolder extends RecyclerView.ViewHolder implem
 //            }
 //        });
 //    }
-
 //    inflating the itemView with the Animator set items
+
     @Override
     public void onItemSelected(){
         AnimatorSet set = (AnimatorSet) AnimatorInflater.loadAnimator(mContext,
@@ -98,6 +95,7 @@ public class FirebaseRestaurantViewHolder extends RecyclerView.ViewHolder implem
         set.setTarget(itemView);
         set.start();
     }
+//
     public  void onItemClear(){
         AnimatorSet set = (AnimatorSet) AnimatorInflater.loadAnimator(mContext,
                 R.animator.drag_scale_off);
