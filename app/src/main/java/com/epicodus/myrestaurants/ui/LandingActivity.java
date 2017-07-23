@@ -35,17 +35,17 @@ public class LandingActivity extends AppCompatActivity implements View.OnClickLi
         mButton1.setOnClickListener(this);
         mSign1.setOnClickListener(this);
 //Method to run landing activity only after installation
-        SharedPreferences pref = getSharedPreferences("ActivityPREF", Context.MODE_PRIVATE);
-        if (pref.getBoolean("activity_executed", false)) {
-            Intent intent = new Intent(this, MainActivity.class);
-            startActivity(intent);
-            finish();
-        } else {
-            SharedPreferences.Editor ed = pref.edit();
-            ed.putBoolean("activity_executed", true);
-            ed.commit();
-
-        }
+//        SharedPreferences pref = getSharedPreferences("ActivityPREF", Context.MODE_PRIVATE);
+//        if (pref.getBoolean("activity_executed", false)) {
+//            Intent intent = new Intent(this, MainActivity.class);
+//            startActivity(intent);
+//            finish();
+//        } else {
+//            SharedPreferences.Editor ed = pref.edit();
+//            ed.putBoolean("activity_executed", true);
+//            ed.commit();
+//
+//        }
     }
 
     public void onClick(View v) {
