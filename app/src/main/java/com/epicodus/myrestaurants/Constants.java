@@ -1,16 +1,13 @@
 package com.epicodus.myrestaurants;
 
-<<<<<<< HEAD
-=======
+
 /**
  * Created by kiragu on 5/29/17.
  */
->>>>>>> a6de4cee6a53996328f5c522dcbdb15d29c4b9a2
 
 public class Constants {
     public static final String YELP_CONSUMER_KEY = BuildConfig.YELP_CONSUMER_KEY;
     public static final String YELP_CONSUMER_SECRET = BuildConfig.YELP_CONSUMER_SECRET;
-<<<<<<< HEAD
     public static final String YELP_TOKEN = BuildConfig.YELP_ACCESS_TOKEN;
     public static final String YELP_TOKEN_SECRET = BuildConfig.YELP_TOKEN_SECRET;
     public static final String YELP_BASE_URL = "https://api.yelp.com/v2/search?term=food";
@@ -23,15 +20,4 @@ public class Constants {
     public static final String KEY_SOURCE = "source";
     public static final String SOURCE_SAVED = "saved";
     public static final String SOURCE_FIND = "find";
-=======
-    public static final String YELP_ACCESS_TOKEN = BuildConfig.YELP_ACCESS_TOKEN;
-    public static final String YELP_TOKEN_SECRET = BuildConfig.YELP_TOKEN_SECRET;
-    public static final String YELP_BASE_URL = "https://api.yelp.com/v3/businesses/search?term=food";
-    public static final String YELP_LOCATION_QUERY_PARAMETER = "location";
-    public static final String PREFERENCES_LOCATION_KEY= "location";
-    public static final String FIREBASE_CHILD_SEARCHED_LOCATION = "searchedLocation";
-    public static final String FIREBASE_CHILD_RESTAURANTS = "restaurants"; //restaurants node key
-    public static final String FIREBASE_QUERY_INDEX = "index";
-
->>>>>>> a6de4cee6a53996328f5c522dcbdb15d29c4b9a2
 }

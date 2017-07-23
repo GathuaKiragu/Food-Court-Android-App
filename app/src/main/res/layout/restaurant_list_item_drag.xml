@@ -12,11 +12,7 @@
             android:layout_width="130dp"
             android:layout_height="100dp"
             android:id="@+id/restaurantImageView"
-<<<<<<< HEAD
             android:src="@drawable/waffles"
-=======
-            android:src="@drawable/logo"
->>>>>>> a6de4cee6a53996328f5c522dcbdb15d29c4b9a2
             android:scaleType="centerCrop"/>
 
         <ImageView

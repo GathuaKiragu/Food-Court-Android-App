@@ -1,66 +1,34 @@
 package com.epicodus.myrestaurants.ui;
 
+/**
+ * Created by kiragu on 6/11/17.
+ */
+
 import android.content.Intent;
-<<<<<<< HEAD
 import android.graphics.Typeface;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-=======
-import android.content.SharedPreferences;
-import android.graphics.Typeface;
-import android.preference.PreferenceManager;
-import android.support.annotation.NonNull;
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
-import android.util.Log;
->>>>>>> a6de4cee6a53996328f5c522dcbdb15d29c4b9a2
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-<<<<<<< HEAD
 import android.widget.TextView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.epicodus.myrestaurants.R;
-=======
-import android.widget.EditText;
-import android.widget.TextView;
-
-import com.epicodus.myrestaurants.Constants;
-import com.epicodus.myrestaurants.R;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
->>>>>>> a6de4cee6a53996328f5c522dcbdb15d29c4b9a2
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
-<<<<<<< HEAD
-=======
-    private FirebaseAuth mAuth;
-    private FirebaseAuth.AuthStateListener mAuthListener;
-
->>>>>>> a6de4cee6a53996328f5c522dcbdb15d29c4b9a2
     @Bind(R.id.findRestaurantsButton) Button mFindRestaurantsButton;
     @Bind(R.id.appNameTextView) TextView mAppNameTextView;
     @Bind(R.id.savedRestaurantsButton) Button mSavedRestaurantsButton;
 
-<<<<<<< HEAD
     private FirebaseAuth mAuth;
     private FirebaseAuth.AuthStateListener mAuthListener;
-=======
-//    private SharedPreferences mSharedPreferences;
-//    private SharedPreferences.Editor mEditor;
->>>>>>> a6de4cee6a53996328f5c522dcbdb15d29c4b9a2
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,7 +36,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
 
-<<<<<<< HEAD
         Typeface ostrichFont = Typeface.createFromAsset(getAssets(), "fonts/ostrich-regular.ttf");
         mAppNameTextView.setTypeface(ostrichFont);
 
@@ -79,10 +46,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         mAuthListener = new FirebaseAuth.AuthStateListener() {
 
-=======
-        mAuth = FirebaseAuth.getInstance();
-        mAuthListener = new FirebaseAuth.AuthStateListener() {
->>>>>>> a6de4cee6a53996328f5c522dcbdb15d29c4b9a2
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
                 FirebaseUser user = firebaseAuth.getCurrentUser();
@@ -93,7 +56,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 }
             }
         };
-<<<<<<< HEAD
     }
 
     @Override
@@ -121,53 +83,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
 
-=======
-
-        Typeface ostrichFont = Typeface.createFromAsset(getAssets(), "fonts/ostrich-regular.ttf");
-        mAppNameTextView.setTypeface(ostrichFont);
-//        mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
-//        mEditor = mSharedPreferences.edit();
-        mFindRestaurantsButton.setOnClickListener(this);
-        mSavedRestaurantsButton.setOnClickListener(this);
-    }
-
-    @Override
-    public void onClick(View v) {
-        if (v == mFindRestaurantsButton) {
-            Intent intent = new Intent(MainActivity.this, RestaurantsActivity.class);
-            startActivity(intent);
-        }
-        if (v == mSavedRestaurantsButton) {
-            Intent intent = new Intent(MainActivity.this, SavedRestaurantListActivity.class);
-            startActivity(intent);
-        }
-    }
-//inflating the logout menu item
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu){
-        MenuInflater inflater=getMenuInflater();
-        inflater.inflate(R.menu.menu_main, menu);
-        return super.onCreateOptionsMenu(menu);
-    }
-//  Action once the logout menu is clicked
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        int id = item.getItemId();
->>>>>>> a6de4cee6a53996328f5c522dcbdb15d29c4b9a2
         if (id == R.id.action_logout) {
             logout();
             return true;
         }
-<<<<<<< HEAD
 
         return super.onOptionsItemSelected(item);
     }
 
-=======
-        return super.onOptionsItemSelected(item);
-    }
-//    Firebase method to signout
->>>>>>> a6de4cee6a53996328f5c522dcbdb15d29c4b9a2
     private void logout() {
         FirebaseAuth.getInstance().signOut();
         Intent intent = new Intent(MainActivity.this, LoginActivity.class);
@@ -175,7 +98,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         startActivity(intent);
         finish();
     }
-<<<<<<< HEAD
 
     @Override
     public void onClick(View v) {
@@ -192,19 +114,4 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     }
 
-=======
-    @Override
-    public void onStart() {
-        super.onStart();
-        mAuth.addAuthStateListener(mAuthListener);
-    }
-
-    @Override
-    public void onStop() {
-        super.onStop();
-        if (mAuthListener != null) {
-            mAuth.removeAuthStateListener(mAuthListener);
-        }
-    }
->>>>>>> a6de4cee6a53996328f5c522dcbdb15d29c4b9a2
 }

@@ -7,11 +7,6 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
-<<<<<<< HEAD
 
     <style name="NoActionBarTheme" parent="Theme.AppCompat.Light.NoActionBar"></style>
-
-=======
-    <style name="NoActionBarTheme" parent="Theme.AppCompat.Light.NoActionBar"></style>
->>>>>>> a6de4cee6a53996328f5c522dcbdb15d29c4b9a2
 </resources>

@@ -1,27 +1,22 @@
 package com.epicodus.myrestaurants.adapters;
 
+/**
+ * Created by kiragu on 5/29/17.
+ */
+
 import android.content.Context;
 import android.content.Intent;
-<<<<<<< HEAD
 import android.content.res.Configuration;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentTransaction;
-=======
->>>>>>> a6de4cee6a53996328f5c522dcbdb15d29c4b9a2
 import android.support.v4.view.MotionEventCompat;
 import android.view.MotionEvent;
 import android.view.View;
 
-<<<<<<< HEAD
 import com.epicodus.myrestaurants.Constants;
 import com.epicodus.myrestaurants.models.Restaurant;
 import com.epicodus.myrestaurants.ui.RestaurantDetailActivity;
 import com.epicodus.myrestaurants.ui.RestaurantDetailFragment;
-=======
-import com.epicodus.myrestaurants.adapters.FirebaseRestaurantViewHolder;
-import com.epicodus.myrestaurants.models.Restaurant;
-import com.epicodus.myrestaurants.ui.RestaurantDetailActivity;
->>>>>>> a6de4cee6a53996328f5c522dcbdb15d29c4b9a2
 import com.epicodus.myrestaurants.util.ItemTouchHelperAdapter;
 import com.epicodus.myrestaurants.util.OnStartDragListener;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
@@ -30,10 +25,7 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.Query;
-<<<<<<< HEAD
 import com.epicodus.myrestaurants.R;
-=======
->>>>>>> a6de4cee6a53996328f5c522dcbdb15d29c4b9a2
 
 import org.parceler.Parcels;
 
@@ -46,10 +38,7 @@ public class FirebaseRestaurantListAdapter extends FirebaseRecyclerAdapter<Resta
     private ChildEventListener mChildEventListener;
     private Context mContext;
     private ArrayList<Restaurant> mRestaurants = new ArrayList<>();
-<<<<<<< HEAD
     private int mOrientation;
-=======
->>>>>>> a6de4cee6a53996328f5c522dcbdb15d29c4b9a2
 
     public FirebaseRestaurantListAdapter(Class<Restaurant> modelClass, int modelLayout,
                                          Class<FirebaseRestaurantViewHolder> viewHolderClass,
@@ -93,14 +82,11 @@ public class FirebaseRestaurantListAdapter extends FirebaseRecyclerAdapter<Resta
     protected void populateViewHolder(final FirebaseRestaurantViewHolder viewHolder, Restaurant model, int position) {
         viewHolder.bindRestaurant(model);
 
-<<<<<<< HEAD
         mOrientation = viewHolder.itemView.getResources().getConfiguration().orientation;
         if (mOrientation == Configuration.ORIENTATION_LANDSCAPE) {
             createDetailFragment(0);
         }
 
-=======
->>>>>>> a6de4cee6a53996328f5c522dcbdb15d29c4b9a2
         viewHolder.mRestaurantImageView.setOnTouchListener(new View.OnTouchListener() {
 
             @Override
@@ -117,7 +103,6 @@ public class FirebaseRestaurantListAdapter extends FirebaseRecyclerAdapter<Resta
 
             @Override
             public void onClick(View v) {
-<<<<<<< HEAD
                 int itemPosition = viewHolder.getAdapterPosition();
                 if (mOrientation == Configuration.ORIENTATION_LANDSCAPE) {
                     createDetailFragment(itemPosition);
@@ -128,18 +113,11 @@ public class FirebaseRestaurantListAdapter extends FirebaseRecyclerAdapter<Resta
                     intent.putExtra(Constants.KEY_SOURCE, Constants.SOURCE_SAVED);
                     mContext.startActivity(intent);
                 }
-=======
-                Intent intent = new Intent(mContext, RestaurantDetailActivity.class);
-                intent.putExtra("position", viewHolder.getAdapterPosition());
-                intent.putExtra("restaurants", Parcels.wrap(mRestaurants));
-                mContext.startActivity(intent);
->>>>>>> a6de4cee6a53996328f5c522dcbdb15d29c4b9a2
             }
         });
 
     }
 
-<<<<<<< HEAD
     private void createDetailFragment(int position) {
         RestaurantDetailFragment detailFragment = RestaurantDetailFragment.newInstance(mRestaurants, position, Constants.SOURCE_SAVED);
         FragmentTransaction ft = ((FragmentActivity) mContext).getSupportFragmentManager().beginTransaction();
@@ -147,8 +125,6 @@ public class FirebaseRestaurantListAdapter extends FirebaseRecyclerAdapter<Resta
         ft.commit();
     }
 
-=======
->>>>>>> a6de4cee6a53996328f5c522dcbdb15d29c4b9a2
     @Override
     public boolean onItemMove(int fromPosition, int toPosition) {
         Collections.swap(mRestaurants, fromPosition, toPosition);
@@ -166,12 +142,7 @@ public class FirebaseRestaurantListAdapter extends FirebaseRecyclerAdapter<Resta
         for (Restaurant restaurant : mRestaurants) {
             int index = mRestaurants.indexOf(restaurant);
             DatabaseReference ref = getRef(index);
-<<<<<<< HEAD
             ref.child("index").setValue(Integer.toString(index));
-=======
-            restaurant.setIndex(Integer.toString(index));
-            ref.setValue(restaurant);
->>>>>>> a6de4cee6a53996328f5c522dcbdb15d29c4b9a2
         }
     }
 
@@ -181,8 +152,4 @@ public class FirebaseRestaurantListAdapter extends FirebaseRecyclerAdapter<Resta
         setIndexInFirebase();
         mRef.removeEventListener(mChildEventListener);
     }
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> a6de4cee6a53996328f5c522dcbdb15d29c4b9a2

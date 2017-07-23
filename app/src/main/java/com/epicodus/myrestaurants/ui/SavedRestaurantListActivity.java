@@ -1,5 +1,9 @@
 package com.epicodus.myrestaurants.ui;
 
+/**
+ * Created by kiragu on 6/11/17.
+ */
+
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import com.epicodus.myrestaurants.R;

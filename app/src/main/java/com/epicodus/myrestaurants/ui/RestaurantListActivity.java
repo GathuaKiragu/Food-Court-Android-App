@@ -1,4 +1,9 @@
 package com.epicodus.myrestaurants.ui;
+
+/**
+ * Created by kiragu on 6/11/17.
+ */
+
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.support.v7.app.AppCompatActivity;
@@ -60,4 +65,3 @@ public class RestaurantListActivity extends AppCompatActivity implements OnResta
         mSource = source;
     }
 }
-

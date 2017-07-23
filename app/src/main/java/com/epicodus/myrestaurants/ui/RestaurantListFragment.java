@@ -1,5 +1,8 @@
 package com.epicodus.myrestaurants.ui;
 
+/**
+ * Created by kiragu on 6/11/17.
+ */
 
 import android.content.Context;
 import android.content.SharedPreferences;

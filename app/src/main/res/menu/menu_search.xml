@@ -1,7 +1,4 @@
-<<<<<<< HEAD
 <?xml version="1.0" encoding="utf-8"?>
-=======
->>>>>>> a6de4cee6a53996328f5c522dcbdb15d29c4b9a2
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
@@ -11,8 +8,4 @@
         app:actionViewClass="android.support.v7.widget.SearchView"
         android:title="Search">
     </item>
-<<<<<<< HEAD
 </menu>
-=======
-</menu>
->>>>>>> a6de4cee6a53996328f5c522dcbdb15d29c4b9a2
