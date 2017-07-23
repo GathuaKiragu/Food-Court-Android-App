@@ -136,14 +136,18 @@
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Save Restaurant"
+                android:text="Save FoodCourt"
                 android:id="@+id/saveRestaurantButton"
                 android:layout_alignParentBottom="true"
+<<<<<<< HEAD
 <<<<<<< HEAD
                 android:background="@drawable/buttonshape"
 =======
                 android:background="@color/colorAccent"
 >>>>>>> a6de4cee6a53996328f5c522dcbdb15d29c4b9a2
+=======
+                android:background="@drawable/button1"
+>>>>>>> e0dda9d0b03cfea136698c176ffa84f833e7678f
                 android:textColor="@color/colorTextIcons"
                 android:textSize="15sp" />
         </RelativeLayout>

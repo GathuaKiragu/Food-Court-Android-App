@@ -71,21 +71,13 @@
             android:textColorHint="@color/colorDivider"
             android:textSize="20sp" />
 
-<<<<<<< HEAD
-=======
-
->>>>>>> a6de4cee6a53996328f5c522dcbdb15d29c4b9a2
         <Button
             android:id="@+id/createUserButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="10dp"
             android:text="Sign up"
-<<<<<<< HEAD
-            android:background="@drawable/buttonshape"
-=======
-            android:background="@color/colorAccent"
->>>>>>> a6de4cee6a53996328f5c522dcbdb15d29c4b9a2
+            android:background="@drawable/button1"
             android:layout_marginTop="15dp"
             android:textColor="@color/colorTextIcons" />
 
@@ -112,8 +104,4 @@
         android:layout_above="@+id/linearLayout"
         android:layout_centerHorizontal="true" />
 
-<<<<<<< HEAD
 </RelativeLayout>
-=======
-</RelativeLayout>
->>>>>>> a6de4cee6a53996328f5c522dcbdb15d29c4b9a2

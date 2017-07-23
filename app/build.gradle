@@ -40,11 +40,7 @@ android {
     buildTypes.each {
         it.buildConfigField 'String', 'YELP_CONSUMER_KEY', YelpConsumerKey
         it.buildConfigField 'String', 'YELP_CONSUMER_SECRET', YelpConsumerSecret
-<<<<<<< HEAD
         it.buildConfigField 'String', 'YELP_ACCESS_TOKEN', YelpToken
-=======
-        it.buildConfigField 'String', 'YELP_ACCESS_TOKEN', YelpAccessToken
->>>>>>> a6de4cee6a53996328f5c522dcbdb15d29c4b9a2
         it.buildConfigField 'String', 'YELP_TOKEN_SECRET', YelpTokenSecret
     }
 }
@@ -76,4 +72,3 @@ dependencies {
     annotationProcessor 'org.parceler:parceler:1.1.6'
 }
 apply plugin: 'com.google.gms.google-services'
-
