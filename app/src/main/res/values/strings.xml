@@ -1,5 +1,10 @@
 <resources>
+<<<<<<< HEAD
     <string name="app_name">Food Court</string>
+=======
+    <string name="app_name">MyRestaurants</string>
+
+>>>>>>> a6de4cee6a53996328f5c522dcbdb15d29c4b9a2
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

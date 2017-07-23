@@ -8,7 +8,11 @@
         android:layout_width="130dp"
         android:layout_height="100dp"
         android:id="@+id/restaurantImageView"
+<<<<<<< HEAD
         android:src="@drawable/waffles"
+=======
+        android:src="@drawable/wallpaper"
+>>>>>>> a6de4cee6a53996328f5c522dcbdb15d29c4b9a2
         android:scaleType="centerCrop"/>
 
     <LinearLayout
@@ -39,16 +43,32 @@
 
         <RelativeLayout
             android:layout_width="match_parent"
+<<<<<<< HEAD
             android:layout_height="match_parent">
+=======
+            android:layout_height="match_parent"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true">
+>>>>>>> a6de4cee6a53996328f5c522dcbdb15d29c4b9a2
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Rating"
                 android:id="@+id/ratingTextView"
+<<<<<<< HEAD
                 android:layout_alignParentBottom="true"
                 android:layout_alignParentRight="true"
                 android:textColor="@color/colorAccent"/>
         </RelativeLayout>
     </LinearLayout>
 </LinearLayout>
+=======
+                android:textColor="@color/colorAccent"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" />
+        </RelativeLayout>
+    </LinearLayout>
+    </LinearLayout>
+>>>>>>> a6de4cee6a53996328f5c522dcbdb15d29c4b9a2

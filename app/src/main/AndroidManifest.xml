@@ -3,18 +3,29 @@
     package="com.epicodus.myrestaurants">
 
     <uses-permission android:name="android.permission.INTERNET" />
+<<<<<<< HEAD
     <uses-feature android:name="android.hardware.camera" android:required="false" />
 
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
+=======
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/logo"
+>>>>>>> a6de4cee6a53996328f5c522dcbdb15d29c4b9a2
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
             android:name=".ui.MainActivity">
         </activity>
+<<<<<<< HEAD
         <activity android:name=".ui.RestaurantListActivity">
+=======
+        <activity android:name=".ui.RestaurantsActivity">
+>>>>>>> a6de4cee6a53996328f5c522dcbdb15d29c4b9a2
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".ui.MainActivity" />

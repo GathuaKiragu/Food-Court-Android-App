@@ -10,12 +10,17 @@
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:id="@+id/imageView"
+<<<<<<< HEAD
         android:src="@drawable/pic"
+=======
+        android:src="@drawable/wallpaper"
+>>>>>>> a6de4cee6a53996328f5c522dcbdb15d29c4b9a2
         android:scaleType="centerCrop" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+<<<<<<< HEAD
         android:text="Food Court"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
@@ -24,10 +29,21 @@
         android:textSize="60sp"
         android:textStyle="bold"
         android:id="@+id/appNameTextView"/>
+=======
+        android:text="MyRestaurants"
+        android:layout_marginTop="40dp"
+        android:textColor="@color/colorTextIcons"
+        android:textSize="50sp"
+        android:textStyle="bold"
+        android:id="@+id/appNameTextView"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+>>>>>>> a6de4cee6a53996328f5c522dcbdb15d29c4b9a2
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+<<<<<<< HEAD
         android:background="@drawable/buttonshape"
         android:text="Find Restaurants"
         android:id="@+id/findRestaurantsButton"
@@ -37,13 +53,28 @@
         android:layout_above="@+id/savedRestaurantsButton"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
+=======
+        android:text="Find Restaurants"
+        android:id="@+id/findRestaurantsButton"
+        android:background="@color/colorAccent"
+        android:textColor="@color/colorTextIcons"
+        android:visibility="visible"
+        android:layout_above="@+id/savedRestaurantsButton"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="10dp" />
+>>>>>>> a6de4cee6a53996328f5c522dcbdb15d29c4b9a2
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="My Saved Restaurants"
         android:id="@+id/savedRestaurantsButton"
+<<<<<<< HEAD
         android:background="@drawable/buttonshape"
+=======
+        android:background="@color/colorAccent"
+>>>>>>> a6de4cee6a53996328f5c522dcbdb15d29c4b9a2
         android:textColor="@color/colorTextIcons"
         android:visibility="visible"
         android:layout_alignParentBottom="true"

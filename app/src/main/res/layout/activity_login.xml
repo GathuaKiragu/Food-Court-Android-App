@@ -50,7 +50,11 @@
             android:layout_height="wrap_content"
             android:padding="10dp"
             android:text="Log in"
+<<<<<<< HEAD
             android:background="@drawable/buttonshape"
+=======
+            android:background="@color/colorAccent"
+>>>>>>> a6de4cee6a53996328f5c522dcbdb15d29c4b9a2
             android:layout_marginTop="15dp"
             android:textColor="@color/colorTextIcons" />
 

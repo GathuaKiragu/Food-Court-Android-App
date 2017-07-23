@@ -1,10 +1,17 @@
 *.iml
 .gradle
+<<<<<<< HEAD
 /gradle.properties
+=======
+>>>>>>> a6de4cee6a53996328f5c522dcbdb15d29c4b9a2
 /local.properties
 /.idea/workspace.xml
 /.idea/libraries
 .DS_Store
 /build
 /captures
+<<<<<<< HEAD
+=======
+/gradle.properties
+>>>>>>> a6de4cee6a53996328f5c522dcbdb15d29c4b9a2
 

@@ -2,9 +2,12 @@ package com.epicodus.myrestaurants.adapters;
 
 import android.content.Context;
 import android.content.Intent;
+<<<<<<< HEAD
 import android.content.res.Configuration;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentTransaction;
+=======
+>>>>>>> a6de4cee6a53996328f5c522dcbdb15d29c4b9a2
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -13,6 +16,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+<<<<<<< HEAD
 import com.epicodus.myrestaurants.Constants;
 import com.epicodus.myrestaurants.models.Restaurant;
 import com.epicodus.myrestaurants.ui.RestaurantDetailActivity;
@@ -21,6 +25,14 @@ import com.epicodus.myrestaurants.util.OnRestaurantSelectedListener;
 import com.epicodus.myrestaurants.R;
 import com.squareup.picasso.Picasso;
 
+=======
+import com.epicodus.myrestaurants.R;
+import com.epicodus.myrestaurants.models.Restaurant;
+import com.epicodus.myrestaurants.ui.RestaurantDetailActivity;
+import com.squareup.picasso.Picasso;
+
+
+>>>>>>> a6de4cee6a53996328f5c522dcbdb15d29c4b9a2
 import org.parceler.Parcels;
 
 import java.util.ArrayList;
@@ -34,18 +46,29 @@ public class RestaurantListAdapter extends RecyclerView.Adapter<RestaurantListAd
 
     private ArrayList<Restaurant> mRestaurants = new ArrayList<>();
     private Context mContext;
+<<<<<<< HEAD
     private OnRestaurantSelectedListener mOnRestaurantSelectedListener;
 
     public RestaurantListAdapter(Context context, ArrayList<Restaurant> restaurants, OnRestaurantSelectedListener restaurantSelectedListener) {
         mContext = context;
         mRestaurants = restaurants;
         mOnRestaurantSelectedListener = restaurantSelectedListener;
+=======
+
+    public RestaurantListAdapter(Context context, ArrayList<Restaurant> restaurants) {
+        mContext = context;
+        mRestaurants = restaurants;
+>>>>>>> a6de4cee6a53996328f5c522dcbdb15d29c4b9a2
     }
 
     @Override
     public RestaurantListAdapter.RestaurantViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.restaurant_list_item, parent, false);
+<<<<<<< HEAD
         RestaurantViewHolder viewHolder = new RestaurantViewHolder(view, mRestaurants, mOnRestaurantSelectedListener);
+=======
+        RestaurantViewHolder viewHolder = new RestaurantViewHolder(view);
+>>>>>>> a6de4cee6a53996328f5c522dcbdb15d29c4b9a2
         return viewHolder;
     }
 
@@ -59,8 +82,11 @@ public class RestaurantListAdapter extends RecyclerView.Adapter<RestaurantListAd
         return mRestaurants.size();
     }
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> a6de4cee6a53996328f5c522dcbdb15d29c4b9a2
     public class RestaurantViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         @Bind(R.id.restaurantImageView) ImageView mRestaurantImageView;
         @Bind(R.id.restaurantNameTextView) TextView mNameTextView;
@@ -68,16 +94,22 @@ public class RestaurantListAdapter extends RecyclerView.Adapter<RestaurantListAd
         @Bind(R.id.ratingTextView) TextView mRatingTextView;
 
         private Context mContext;
+<<<<<<< HEAD
         private int mOrientation;
         private ArrayList<Restaurant> mRestaurants = new ArrayList<>();
         private OnRestaurantSelectedListener mRestaurantSelectedListener;
 
 
         public RestaurantViewHolder(View itemView, ArrayList<Restaurant> restaurants, OnRestaurantSelectedListener restaurantSelectedListener) {
+=======
+
+        public RestaurantViewHolder(View itemView) {
+>>>>>>> a6de4cee6a53996328f5c522dcbdb15d29c4b9a2
             super(itemView);
             ButterKnife.bind(this, itemView);
 
             mContext = itemView.getContext();
+<<<<<<< HEAD
             mOrientation = itemView.getResources().getConfiguration().orientation;
             mRestaurants = restaurants;
             mRestaurantSelectedListener = restaurantSelectedListener;
@@ -86,11 +118,16 @@ public class RestaurantListAdapter extends RecyclerView.Adapter<RestaurantListAd
                 createDetailFragment(0);
             }
 
+=======
+>>>>>>> a6de4cee6a53996328f5c522dcbdb15d29c4b9a2
             itemView.setOnClickListener(this);
         }
 
         public void bindRestaurant(Restaurant restaurant) {
+<<<<<<< HEAD
 
+=======
+>>>>>>> a6de4cee6a53996328f5c522dcbdb15d29c4b9a2
             Picasso.with(mContext)
                     .load(restaurant.getImageUrl())
                     .resize(MAX_WIDTH, MAX_HEIGHT)
@@ -102,6 +139,7 @@ public class RestaurantListAdapter extends RecyclerView.Adapter<RestaurantListAd
             mRatingTextView.setText("Rating: " + restaurant.getRating() + "/5");
         }
 
+<<<<<<< HEAD
         private void createDetailFragment(int position) {
             RestaurantDetailFragment detailFragment = RestaurantDetailFragment.newInstance(mRestaurants, position, Constants.SOURCE_FIND);
             FragmentTransaction ft = ((FragmentActivity) mContext).getSupportFragmentManager().beginTransaction();
@@ -124,6 +162,16 @@ public class RestaurantListAdapter extends RecyclerView.Adapter<RestaurantListAd
                 intent.putExtra(Constants.KEY_SOURCE, Constants.SOURCE_FIND);
                 mContext.startActivity(intent);
             }
+=======
+        @Override
+        public void onClick(View v) {
+//            Log.d("click listener", "working!");
+            int itemPosition = getLayoutPosition();
+            Intent intent = new Intent(mContext, RestaurantDetailActivity.class);
+            intent.putExtra("position", itemPosition);
+            intent.putExtra("restaurants", Parcels.wrap(mRestaurants));
+            mContext.startActivity(intent);
+>>>>>>> a6de4cee6a53996328f5c522dcbdb15d29c4b9a2
         }
     }
 }
